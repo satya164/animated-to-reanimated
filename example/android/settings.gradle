@@ -1,0 +1,6 @@
+rootProject.name = 'AnimatedToReanimatedExample'
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':app'
+
+include ':reactnativeanimatedtoreanimated'
+project(':reactnativeanimatedtoreanimated').projectDir = new File(rootProject.projectDir, '../../android')
