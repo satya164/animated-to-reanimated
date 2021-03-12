@@ -1,12 +1,14 @@
-import { requireNativeComponent, ViewStyle } from 'react-native';
+import { Animated, requireNativeComponent } from 'react-native';
 
 type AnimatedToReanimatedProps = {
-  color: string;
-  style: ViewStyle;
+  value: number;
+  onValueChange(e: any): void;
 };
 
-export const AnimatedToReanimatedViewManager = requireNativeComponent<AnimatedToReanimatedProps>(
+const AnimatedToReanimatedView = requireNativeComponent<AnimatedToReanimatedProps>(
   'AnimatedToReanimatedView'
 );
 
-export default AnimatedToReanimatedViewManager;
+export const AnimatedToReanimated = Animated.createAnimatedComponent(
+  AnimatedToReanimatedView
+);
